@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AnimeVortex</title>
+    <style>
+        /* Genel Stil */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #1c1c1c;
+            color: #fff;
+        }
+
+        /* Header */
+        header {
+            background-image: url('https://via.placeholder.com/1920x600'); /* Kapak resmi */
+            background-size: cover;
+            background-position: center;
+            text-align: center;
+            padding: 100px 20px;
+            color: white;
+        }
+        header h1 {
+            font-size: 4rem;
+            margin: 0;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+        }
+        header p {
+            font-size: 1.5rem;
+            margin-top: 10px;
+            text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+        }
+
+        /* Ana İçerik */
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #007BFF;
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+
+        /* Anime Kartları */
+        .anime-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .anime-card {
+            background: #2c2c2c;
+            border-radius: 10px;
+            overflow: hidden;
+            width: 250px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .anime-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+        }
+
+        .anime-card img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+        }
+
+        .anime-card .content {
+            padding: 15px;
+            text-align: center;
+        }
+
+        .anime-card h3 {
+            font-size: 1.2rem;
+            margin: 10px 0;
+        }
+
+        .anime-card p {
+            font-size: 0.9rem;
+            color: #aaa;
+        }
+
+        .anime-card button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            margin-top: 10px;
+        }
+
+        .anime-card button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>AnimeVortex</h1>
+        <p>En sevdiğiniz animeleri keşfedin!</p>
+    </header>
+    <div class="container">
+        <h2 class="section-title">Popüler Animeler</h2>
+        <div class="anime-list">
+            <!-- Naruto Kartı -->
+            <div class="anime-card">
+                <img src="https://img.tamindir.com/2023/01/470608/naruto-izleme-sirasi.jpg" alt="Naruto">
+                <div class="content">
+                    <h3>Naruto</h3>
+                    <p>Ninja dünyasına hoş geldiniz!</p>
+                    <button onclick="window.location.href='episodes.html'">Bölümleri Gör</button>
+                </div>
+            </div>
+
+            <!-- Diğer Anime Kartları -->
+            <div class="anime-card">
+                <img src="https://via.placeholder.com/250x350" alt="Demon Slayer">
+                <div class="content">
+                    <h3>Demon Slayer</h3>
+                    <p>Harika bir anime!</p>
+                    <button onclick="alert('Demon Slayer bölümleri yakında!')">Bölümleri Gör</button>
+                </div>
+            </div>
+
+            <div class="anime-card">
+                <img src="https://via.placeholder.com/250x350" alt="Attack on Titan">
+                <div class="content">
+                    <h3>Attack on Titan</h3>
+                    <p>Efsanevi bir hikaye!</p>
+                    <button onclick="alert('Attack on Titan bölümleri yakında!')">Bölümleri Gör</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

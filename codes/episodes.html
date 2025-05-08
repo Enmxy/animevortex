@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Naruto Bölümleri - AnimeVortex</title>
+    <meta name="description" content="AnimeVortex'te Naruto bölümlerini izleyin. Hokage'nin hayali, Takım 7 ve daha fazlası burada!">
+    <meta name="author" content="AnimeVortex">
+    <link rel="canonical" href="https://animevortex.com/episodes.html">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #1c1c1c;
+            color: #fff;
+        }
+
+        header {
+            background-color: #333;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2rem;
+        }
+
+        .episodes-container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+
+        .episode {
+            background: #2c2c2c;
+            margin-bottom: 20px;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            cursor: pointer;
+        }
+
+        .episode h3 {
+            margin: 0 0 10px;
+            font-size: 1.2rem;
+        }
+
+        .episode:hover {
+            background-color: #444;
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background: #2c2c2c;
+            padding: 20px;
+            border-radius: 10px;
+            width: 80%;
+            max-width: 800px;
+            text-align: center;
+        }
+
+        .modal-content video {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .close-btn {
+            background-color: #FF0000;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            margin-top: 10px;
+        }
+
+        .close-btn:hover {
+            background-color: #cc0000;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Naruto Bölümleri - AnimeVortex</h1>
+    </header>
+    <div class="episodes-container" id="episodesContainer">
+        <!-- Bölümler buraya JavaScript ile eklenecek -->
+    </div>
+
+    <!-- Modal -->
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <video id="videoPlayer" controls>
+                <source src="" type="video/mp4">
+                Tarayıcınız video oynatmayı desteklemiyor.
+            </video>
+            <button class="close-btn" onclick="closeModal()">Kapat</button>
+        </div>
+    </div>
+
+    <script>
+        // Her bölüm için ayrı video dosyaları
+        const episodes = [
+            { title: "Bölüm 1: Hokage'nin Hayali", videoFile: "https://animevortex.com/videos/naruto1.mp4" },
+            { title: "Bölüm 2: Takım 7", videoFile: "https://animevortex.com/videos/naruto-episode-2.mp4" },
+            { title: "Bölüm 3: Chunin Sınavı", videoFile: "https://animevortex.com/videos/naruto-episode-3.mp4" },
+            { title: "Bölüm 4: Uchiha Klanı", videoFile: "https://animevortex.com/videos/naruto-episode-4.mp4" },
+            { title: "Bölüm 5: Rasengan'ın Gücü", videoFile: "https://animevortex.com/videos/naruto-episode-5.mp4" },
+            // Daha fazla bölüm ekleyebilirsiniz
+        ];
+
+        const episodesContainer = document.getElementById('episodesContainer');
+        const modal = document.getElementById('modal');
+        const videoPlayer = document.getElementById('videoPlayer');
+
+        // Bölümleri listele
+        episodes.forEach(episode => {
+            const episodeElement = document.createElement('div');
+            episodeElement.className = 'episode';
+            episodeElement.innerHTML = `<h3>${episode.title}</h3>`;
+            episodeElement.onclick = () => openModal(episode.videoFile);
+            episodesContainer.appendChild(episodeElement);
+        });
+
+        // Modal aç
+        function openModal(videoFile) {
+            videoPlayer.src = videoFile;
+            modal.style.display = 'flex';
+        }
+
+        // Modal kapat
+        function closeModal() {
+            modal.style.display = 'none';
+            videoPlayer.pause();
+            videoPlayer.src = '';
+        }
+    </script>
+</body>
+</html>
